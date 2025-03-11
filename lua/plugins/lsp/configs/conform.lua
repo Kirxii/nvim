@@ -5,14 +5,13 @@ local formatters_by_ft = {
   graphql = { "prettier" },
   html = { "prettier" },
   json = { "prettier" },
-  javascript = { "prettier" },
-  javascriptreact = { "prettier" },
+  javascript = { "biome" },
+  javascriptreact = { "biome" },
   less = { "prettier" },
   markdown = { "prettier" },
   scss = { "prettier" },
-  typescript = { "prettier" },
-  typescriptreact = { "prettier" },
-  vue = { "prettier" },
+  typescript = { "biome" },
+  typescriptreact = { "biome" },
 }
 
 local prettier_ft = {
@@ -21,13 +20,9 @@ local prettier_ft = {
   "graphql",
   "html",
   "json",
-  "javascriptreact",
-  "javascript",
   "less",
   "markdown",
   "scss",
-  "typescript",
-  "typescriptreact",
   "vue",
 }
 
@@ -37,6 +32,7 @@ end
 
 return {
   "stevearc/conform.nvim",
+  enabled = false,
   -- event = { "BufReadPost", "BufNewFile" },
   opts = {
     formatters_by_ft = formatters_by_ft,

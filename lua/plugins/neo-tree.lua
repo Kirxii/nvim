@@ -22,8 +22,13 @@ return {
     "NeotreeRegisterRightClick",
     "NeotreeUnregisterRightClick",
   },
+	keys = {
+		{ "<leader>Fc", "<cmd>Neotree action=focus position=left ./<cr>", desc = "Open current directory tree" },
+		{ "<leader>Fn", "<cmd>Neotree action=focus position=left ~/AppData/Local/nvim/<cr>", desc = "Open Neovim's config directory tree" },
+	},
 
   dependencies = {
+		"lewis6991/gitsigns.nvim",
     "saifulapm/neotree-file-nesting-config",
     "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-web-devicons",
@@ -346,6 +351,8 @@ return {
   },
 
   config = function(_, opts)
+    ConfigDir = "~/Appdata/Local/nvim"
+
     -- Adding file nesting rules from external plugin
     opts.nesting_rules = require("neotree-file-nesting-config").nesting_rules
     require("neo-tree").setup(opts)

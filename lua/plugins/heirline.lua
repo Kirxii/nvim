@@ -23,9 +23,7 @@ return {
     local nil_color = hl.get_color
     local fal_color = hl.get_color_with_fallback
 
-    local get_hi = function(highlight)
-      return utils.get_highlight(highlight)
-    end
+    local get_hi = utils.get_highlight
     local setup_colors = function()
       local colors = {
 				-- stylua: ignore start

@@ -1,7 +1,7 @@
 -- Keymap related settings
 vim.g.mapleader = " "
 
--- Neovide configurations
+-- Neovide configurations - Unused
 vim.o.guifont = "JetBrainsMono Nerd Font Mono,Twemoji Mozilla:h9"
 vim.g.neovide_scale_factor = 0.75
 vim.g.neovide_transparency = 1
@@ -17,6 +17,9 @@ vim.g.neovide_blink_trail_size = 0.4
 vim.g.neovide_blink_antialiasing = false
 vim.g.neovide_blink_animate_command_line = true
 vim.g.neovide_blink_smooth_blink = true
+
+-- Scrolloff
+vim.opt.scrolloff = 999
 
 -- Unsorted stuff
 vim.opt.ignorecase = true

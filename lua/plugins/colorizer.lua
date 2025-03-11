@@ -1,5 +1,6 @@
 return {
   "NvChad/nvim-colorizer.lua",
+  event = "BufReadPre",
 
   opts = {
     filetypes = {
@@ -14,6 +15,7 @@ return {
       "!popup",
       "!prompt",
     },
+
     user_default_options = {
       RGB = true, -- #RGB hex codes
       RRGGBB = true, -- #RRGGBB hex codes

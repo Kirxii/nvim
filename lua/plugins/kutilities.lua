@@ -1,4 +1,4 @@
 return {
   "Kirxii/KUtilities",
-  priority = 1000,
+  commit = "dc225f6",
 }

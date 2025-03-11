@@ -24,3 +24,6 @@ keyset("n", "<c-l>", "<c-w>l", silent())
 
 keyset("n", "<leader>qq", ":qa<CR>", silent("Quit Neovim"))
 keyset("t", "<esc>", "<c-\\><c-n>", silent())
+
+-- Command abbreviations
+keyset("ca", "nvimdir", "~/Appdata/Local/nvim")
