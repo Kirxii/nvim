@@ -2,6 +2,9 @@ return {
   "folke/noice.nvim",
   version = "4.4.7",
   event = "VeryLazy",
+	keys = {
+		{ "<leader>nd", "<cmd>NoiceDismiss<cr>", desc = "Dismiss notifications" }
+	},
 
   dependencies = {
     "MunifTanjim/nui.nvim",

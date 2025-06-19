@@ -7,6 +7,9 @@ local expr = function(desc)
   return { silent = true, expr = true, remap = false, desc = desc }
 end
 
+-- Marks
+keyset("n", "<leader>m", "`", silent("Marks"))
+
 -- Wrapping movements
 keyset({ "n", "v" }, "j", "(v:count == 0 ? 'gj' : 'j')", expr())
 keyset({ "n", "v" }, "k", "(v:count == 0 ? 'gk' : 'k')", expr())
@@ -26,4 +29,8 @@ keyset("n", "<leader>qq", ":qa<CR>", silent("Quit Neovim"))
 keyset("t", "<esc>", "<c-\\><c-n>", silent())
 
 -- Command abbreviations
-keyset("ca", "nvimdir", "~/Appdata/Local/nvim")
+keyset("ca", "nvimdir", "~/Appdata/Local/nvim/")
+
+-- Command mode navigation
+keyset("c", "<c-h>", "<left>")
+keyset("c", "<c-l>", "<right>")

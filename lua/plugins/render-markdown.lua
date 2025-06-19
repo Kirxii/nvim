@@ -1,20 +1,25 @@
 return {
   "MeanderingProgrammer/render-markdown.nvim",
+  lazy = true,
+  event = "BufEnter *.md",
 
   dependencies = {
     "nvim-treesitter/nvim-treesitter",
     "nvim-tree/nvim-web-devicons",
   },
 
+  config = function()
+    local keyset = vim.keymap.set
+  end,
   opts = {
     heading = {
       icons = {
-        "󰎤 ",
-        "󰎧 ",
-        "󰎪 ",
-        "󰎭 ",
-        "󰎱 ",
-        "󰎳 ",
+        " 󰎤 ",
+        " 󰎧 ",
+        " 󰎪 ",
+        " 󰎭 ",
+        " 󰎱 ",
+        " 󰎳 ",
       },
     },
 
@@ -26,6 +31,12 @@ return {
         "◆",
         "◈",
         "◇",
+      },
+    },
+
+    link = {
+      wiki = {
+        icon = " ",
       },
     },
 

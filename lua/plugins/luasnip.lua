@@ -62,12 +62,11 @@ return {
     load_snippet { paths = { "~/Appdata/Local/nvim/lua/plugins/snippets" } }
 
     ls.add_snippets("all", {
-      s("fn", {
-        t("function "),
-        i(1, "functionName"),
-        t { "()", "\t" },
-        i(2, "code"),
-        t { "", "end" },
+      s("-2", {
+        t("–"),
+      }),
+      s("-3", {
+        t("—"),
       }),
     })
 

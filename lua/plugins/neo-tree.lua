@@ -22,13 +22,17 @@ return {
     "NeotreeRegisterRightClick",
     "NeotreeUnregisterRightClick",
   },
-	keys = {
-		{ "<leader>Fc", "<cmd>Neotree action=focus position=left ./<cr>", desc = "Open current directory tree" },
-		{ "<leader>Fn", "<cmd>Neotree action=focus position=left ~/AppData/Local/nvim/<cr>", desc = "Open Neovim's config directory tree" },
-	},
+  keys = {
+    { "<leader>Fc", "<cmd>Neotree action=focus position=left ./<cr>", desc = "Open current directory tree" },
+    {
+      "<leader>Fn",
+      "<cmd>Neotree action=focus position=left ~/AppData/Local/nvim/<cr>",
+      desc = "Open Neovim's config directory tree",
+    },
+  },
 
   dependencies = {
-		"lewis6991/gitsigns.nvim",
+    "lewis6991/gitsigns.nvim",
     "saifulapm/neotree-file-nesting-config",
     "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-web-devicons",
@@ -64,15 +68,15 @@ return {
       },
 
       icon = {
-        folder_closed = "",
-        folder_open = "",
-        folder_empty = "",
-        default = "*",
+        folder_closed = "󰉋",
+        folder_open = "󰝰",
+        folder_empty = "󰉘",
+        default = "󰡯",
         highlight = "NeoTreeFileIcon",
       },
 
       modified = {
-        symbol = " ",
+        symbol = "󰧞",
         highlight = "NeoTreeModified",
       },
 
@@ -87,8 +91,8 @@ return {
           -- Change type
           added = "", -- or "✚", but this is redundant info if you use git_status_colors on the name
           modified = "", -- or "", but this is redundant info if you use git_status_colors on the name
-          deleted = "", -- this can only be used in the git_status source
-          renamed = "󰁕", -- this can only be used in the git_status source
+          deleted = "󰚃", -- this can only be used in the git_status source
+          renamed = "󰛿", -- this can only be used in the git_status source
 
           -- Status type
           untracked = "",
