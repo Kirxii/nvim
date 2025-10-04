@@ -24,6 +24,7 @@ vim.opt.scrolloff = 999
 -- Unsorted stuff
 vim.opt.ignorecase = true
 vim.opt.termguicolors = true
+vim.opt.autochdir = true
 
 -- Visual mode
 vim.opt.virtualedit = "block"

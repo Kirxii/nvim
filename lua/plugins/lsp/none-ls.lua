@@ -2,6 +2,7 @@ return {
   "nvimtools/none-ls.nvim",
   dependencies = {
     "nvimtools/none-ls-extras.nvim",
+    "nvim-lua/plenary.nvim",
   },
 
   config = function()
@@ -10,8 +11,9 @@ return {
     null_ls.setup {
       sources = {
         null_ls.builtins.formatting.stylua,
-        null_ls.builtins.formatting.prettier,
-        require("none-ls.diagnostics.eslint_d"),
+        null_ls.builtins.formatting.prettier.with {
+          extra_filetypes = { "datacorejs", "datacorejsx", "datacorets", "datacoretsx" },
+        },
       },
 
       -- NOTE: Format on save
@@ -22,7 +24,7 @@ return {
             group = augroup,
             buffer = bufnr,
             callback = function()
-              vim.lsp.buf.format { async = false, timeout_ms = 2000 }
+              vim.lsp.buf.format { async = false, timeout_ms = 20000 }
             end,
           })
         end

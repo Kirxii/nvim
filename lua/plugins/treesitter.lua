@@ -9,6 +9,7 @@ return {
   dependencies = {
     "nvim-treesitter/nvim-treesitter-textobjects",
     "nvim-treesitter/nvim-treesitter-context",
+    "windwp/nvim-ts-autotag",
   },
 
   config = function()
@@ -96,13 +97,9 @@ return {
       line_numbers = true,
     }
 
-    require("nvim-ts-autotag").setup {
-      opts = {
-        -- Defaults
-        enable_close = true, -- Auto close tags
-        enable_rename = true, -- Auto rename pairs of tags
-        enable_close_on_slash = false, -- Auto close on trailing </
-      },
-    }
+    vim.treesitter.language.register("javascript", "datacorejs")
+    vim.treesitter.language.register("javascript", "datacorejsx")
+    vim.treesitter.language.register("ts", "datacorets")
+    vim.treesitter.language.register("tsx", "datacoretsx")
   end,
 }

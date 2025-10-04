@@ -23,10 +23,14 @@ return {
     "NeotreeUnregisterRightClick",
   },
   keys = {
-    { "<leader>Fc", "<cmd>Neotree action=focus position=left ./<cr>", desc = "Open current directory tree" },
+    {
+      "<leader>Fc",
+      "<cmd>Neotree action=focus position=left dir=%:h<cr>",
+      desc = "Open current directory tree",
+    },
     {
       "<leader>Fn",
-      "<cmd>Neotree action=focus position=left ~/AppData/Local/nvim/<cr>",
+      "<cmd>Neotree action=focus position=left dir=" .. vim.fn.stdpath("config") .. "<cr>",
       desc = "Open Neovim's config directory tree",
     },
   },

@@ -10,15 +10,6 @@ return {
     opts = {},
   },
 
-  {
-    -- Adding, editing, and deleting parenthesises and tags
-    "kylechui/nvim-surround",
-    event = "VeryLazy",
-    opts = {
-      move_cursor = "sticky",
-    },
-  },
-
   -- NOTE: Treesitter extension
   {
     -- Allows tab to exit out of parenthesises
@@ -33,7 +24,7 @@ return {
       tabkey = "<Tab>",
       backwards_tabkey = "<S-Tab>",
       act_as_tab = true,
-      act_as_shift_tab = false,
+      act_as_shift_tab = true,
       default_tab = "<C-t>",
       default_shift_tab = "<C-d>",
       enable_backwards = true,

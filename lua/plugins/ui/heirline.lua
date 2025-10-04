@@ -5,6 +5,10 @@ return {
   lazy = true,
   event = "UiEnter",
 
+  dependencies = {
+    "linrongbin16/commons.nvim",
+  },
+
   opts = function()
     -- Snippets
     local align = { provider = "%=" }
@@ -203,16 +207,13 @@ return {
 
         if self.filename == "" then
           self.icon = ""
-          self.icon_color = utils.get_highlight("DiagnosticError").fg
         end
       end,
 
       provider = function(self)
         return self.icon .. " "
       end,
-      hl = function(self)
-        return { fg = self.icon_color, bg = "pmenu" }
-      end,
+      hl = { fg = "diag_error_fg", bg = "color_column" },
     }
 
     local FileName = {
@@ -225,13 +226,23 @@ return {
       end,
       hl = function(self)
         if self.modified then
-          return { fg = "yellow", bg = "pmenu" }
+          return { fg = "yellow", bg = "color_column" }
         elseif self.unmodifiable then
-          return { fg = "yellow", bg = "pmenu" }
+          return { fg = "yellow", bg = "color_column" }
+        else
+          return { fg = "normal", bg = "color_column" }
         end
-
-        return { fg = "normal", bg = "pmenu" }
       end,
+    }
+
+    local FileSavedFlag = {
+      condition = function(self)
+        return not self.modified
+      end,
+
+      provider = " ",
+
+      hl = { fg = "green", bg = "color_column" },
     }
 
     local FileModifiedFlag = {
@@ -239,9 +250,9 @@ return {
         return self.modified
       end,
 
-      provider = " []",
+      provider = " ",
 
-      hl = { fg = "yellow", bg = "pmenu" },
+      hl = { fg = "yellow", bg = "color_column" },
     }
 
     local FileUnmodifiableFlag = {
@@ -249,8 +260,9 @@ return {
         return self.unmodifiable
       end,
 
-      provider = " []",
-      hl = { fg = "red", bg = "pmenu" },
+      provider = " ",
+
+      hl = { fg = "red", bg = "color_column" },
     }
 
     local FileSize = {
@@ -272,7 +284,7 @@ return {
         return " [" .. filesize .. suffixes[suffix] .. "]"
       end,
 
-      hl = { fg = "normal", bg = "pmenu" },
+      hl = { fg = "normal", bg = "color_column" },
     }
 
     local File = {
@@ -288,11 +300,12 @@ return {
         self.unmodifiable = not vim.bo.modifiable or vim.bo.readonly
       end,
 
-      hl = { fg = "pmenu", bg = "background" },
+      hl = { fg = "color_column", bg = "background" },
 
       round["opening"],
       FileIcon,
       FileName,
+      FileSavedFlag,
       FileModifiedFlag,
       FileUnmodifiableFlag,
       FileSize,

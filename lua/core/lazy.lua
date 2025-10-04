@@ -1,3 +1,4 @@
+require("core.utils")
 require("core.options")
 require("core.autocmds")
 require("core.keymaps")
@@ -24,6 +25,9 @@ require("lazy").setup({
   spec = {
     { import = "themes" },
     { import = "plugins" },
+    { import = "plugins.lsp" },
+    { import = "plugins.text-editing" },
+    { import = "plugins.ui" },
   },
 
   defaults = {
@@ -43,5 +47,3 @@ require("lazy").setup({
     },
   },
 })
-
-require("core.utils")
