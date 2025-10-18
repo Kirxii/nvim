@@ -213,7 +213,9 @@ return {
       provider = function(self)
         return self.icon .. " "
       end,
-      hl = { fg = "diag_error_fg", bg = "color_column" },
+      hl = function(self)
+        return { fg = self.icon_color, bg = "color_column" }
+      end,
     }
 
     local FileName = {
