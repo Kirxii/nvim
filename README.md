@@ -2,8 +2,8 @@
 
 ## Windows
 
-Run powershell.exe and run the following commands
+Run PowerShell and run the following commands
 
 ```powershell
-winget install Git.Git; winget install Zig.Zig; winget install Wezterm.Wezterm; start-process powershell -ArgumentList '-NoExit', '-Command', 'git clone github.com/kirxii/wezterm ~/; git clone github.com/kirxii/nvim ~/Appdata/Local/; wezterm start nvim'; exit
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser; Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression; refreshenv; scoop bucket add main; scoop bucket add extras; scoop install main/neovim; scoop install main/git; scoop install main/clangd; scoop install extras/wezterm; refreshenv; git clone https://github.com/Kirxii/wezterm; cd ~/Appdata/Local/; git clone https://github.com/Kirxii/nvim; wezterm start -- nvim;
 ```
