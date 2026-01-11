@@ -12,11 +12,12 @@
 
 return {
 	"rebelot/heirline.nvim",
-	lazy = true,
-	event = "UiEnter",
 
 	dependencies = {
-		"linrongbin16/commons.nvim",
+		{
+			"linrongbin16/commons.nvim",
+			commit = "592432b",
+		},
 	},
 
 	opts = function()

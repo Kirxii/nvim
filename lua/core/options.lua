@@ -44,20 +44,20 @@ vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 
 -- End of buffer
-vim.opt.fillchars:append { eob = " " }
+vim.opt.fillchars:append({ eob = " " })
 
 -- Diagnostics virtual text prefix
-local signs = { Error = "", Warn = "", Hint = "󱠂", Info = "" }
-for type, icon in pairs(signs) do
-  local hl = "DiagnosticSign" .. type
-  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-end
+-- local signs = { Error = "", Warn = "", Hint = "󱠂", Info = "" }
+-- for type, icon in pairs(signs) do
+--   local hl = "DiagnosticSign" .. type
+--   vim.(hl, { text = icon, texthl = hl, numhl = hl })
+-- end
 
-local sign = { ERROR = "", WARN = "", HINT = "󱠂", INFO = "" }
-vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-  virtual_text = {
-    prefix = function(diagnostic)
-      return sign[vim.diagnostic.severity[diagnostic.severity]]
-    end,
-  },
-})
+-- local sign = { ERROR = "", WARN = "", HINT = "󱠂", INFO = "" }
+-- vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+--   virtual_text = {
+--     prefix = function(diagnostic)
+--       return sign[vim.diagnostic.severity[diagnostic.severity]]
+--     end,
+--   },
+-- })
