@@ -1,9 +1,25 @@
 return {
-  "nvimdev/lspsaga.nvim",
-  dependencies = {
-    "nvim-treesitter/nvim-treesitter",
-    "nvim-tree/nvim-web-devicons",
-  },
+	"nvimdev/lspsaga.nvim",
+	keys = {
+		{ "K", ":Lspsaga hover_doc<cr>", desc = "Hover Documentation", silent = true },
+	},
 
-  opts = {},
+	dependencies = {
+		"nvim-treesitter/nvim-treesitter",
+		"nvim-tree/nvim-web-devicons",
+	},
+
+	opts = {
+		symbol_in_winbar = {
+			folder_level = 2,
+		},
+		lightbulb = {
+			enabled = true,
+			sign = false,
+			virtual_text = true,
+		},
+		ui = {
+			code_action = " 󱐋",
+		},
+	},
 }
